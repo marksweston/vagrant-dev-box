@@ -8,7 +8,7 @@ echo "***************************************************"
 if ! dpkg -s postgresql; then
   echo "Installing PostgreSQL"
   sudo apt-get update
-  sudo apt-get install -y postgresql postgresql-contrib
+  sudo apt-get install -y postgresql libpq-dev postgresql-contrib
 
   echo "Setting up user"
   sudo -u postgres bash -c "psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\""

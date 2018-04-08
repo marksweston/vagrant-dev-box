@@ -13,6 +13,8 @@ if ! dpkg -s postgresql; then
   echo "Setting up user"
   sudo -u postgres bash -c "psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\""
   sudo -u postgres bash -c "psql -c \"ALTER USER vagrant WITH SUPERUSER;\""
+  sudo -u postgres bash -c "psql -c \"CREATE USER root;\""
+  sudo -u postgres bash -c "psql -c \"ALTER USER root WITH SUPERUSER;\""
 
   echo "Starting Postgres server"
   sudo service postgresql start

@@ -56,13 +56,13 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
      # Display the VirtualBox GUI when booting the machine
      # vb.gui = true
-  
+
      # Customize the amount of memory on the VM:
     vb.memory = "2048"
   end
 
   config.ssh.forward_agent = true
-  
+
   # View the documentation for the provider you are using for more
   # information on available options.
 
@@ -76,4 +76,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "provision/install-node.sh", privileged: false
   config.vm.provision :shell, path: "provision/install-heroku.sh", privileged: false
   config.vm.provision :shell, path: "provision/install-yarn.sh", privileged: false
+  config.vm.provition :shell, path: "provision/user-setup.sh", privileged: false
 end

@@ -76,5 +76,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "provision/install-node.sh", privileged: false
   config.vm.provision :shell, path: "provision/install-heroku.sh", privileged: false
   config.vm.provision :shell, path: "provision/install-yarn.sh", privileged: false
-  config.vm.provition :shell, path: "provision/user-setup.sh", privileged: false
+  config.vm.provision :shell, path: "provision/user-setup.sh", privileged: false
 end

@@ -17,6 +17,9 @@ if ! dpkg -s postgresql; then
   echo "export DATABASE_URL=postgresql://rails:rails@localhost:5432" >> /home/vagrant/.bashrc
   echo "export TEST_DATABASE_URL=postgresql://rails:rails@localhost:5432" >> /home/vagrant/.bashrc
 
+  # create a postgres superuser for the vagrant role, which Rails will effectively use by default
+  sudo -u postgres createuser -s vagrant
+
   echo "Starting Postgres server"
   sudo service postgresql start
 fi
